@@ -14,11 +14,7 @@ const PizzaComponent = (props) => {
     }
 
     pizzasList = renderPizzas(props.pizzas);
-    return (<div>
-                <input type="text"></input>
-                <button>Sort</button>
-                <div>{pizzasList}</div>
-            </div>);
+    return (<div>{pizzasList}</div>);
 }
 
 export default PizzaComponent;
