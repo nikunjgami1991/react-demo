@@ -2,19 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import fetch from 'isomorphic-fetch';
-import PizzaComponent from './src/Components/PizzaComponent';
+import AppComponent from './src/Components/AppComponent';
 
-function loadPizzas ()  {
-     axios.get(`./pizza.json`)
-      .then(function (response) {          
-        ReactDOM.render(<PizzaComponent pizzas={response.data.pizzas}/>,document.getElementById('root'));
-      }.bind(this))
-      .catch(function (error) {          
-        return error;           
-      });
-}
-
-loadPizzas();
+ReactDOM.render(<AppComponent/>,document.getElementById('root'));
 // Note: this is the entry point for the entire application
 
 // step 1: you will need to load the pizza data. it is available at /pizza.json. what-wg fetch is pre-installed,
