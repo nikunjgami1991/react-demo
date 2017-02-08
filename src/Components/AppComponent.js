@@ -3,6 +3,7 @@ import axios from 'axios';
 import LoadingComponent from './LoadingComponent';
 import PizzaComponent from './PizzaComponent';
 import {FilterList, SortList} from './../Common/CommonFunctions';
+import {MainContainer, FilterInput, SortButton} from './../Styles/AppComponentStyles';
 
 /**This is a main container component which will hold the data and distribute it to other components*/
 class AppComponent extends Component {
@@ -52,11 +53,11 @@ class AppComponent extends Component {
 
     render(){        
         if(this.state.pizzas.length > 0){
-            return(<div>
-                        <input type="text" onChange={(event) => this.filterPizzaList(event.target.value)}></input>
-                        <button onClick={() => this.sortPizzaList()}>Sort Pizzas</button>
+            return(<MainContainer>
+                        <FilterInput type="text" onChange={(event) => this.filterPizzaList(event.target.value)}></FilterInput>
+                        <SortButton onClick={() => this.sortPizzaList()}>Sort Pizzas</SortButton>
                         <PizzaComponent pizzas={this.state.pizzas}/>
-                    </div>);
+                    </MainContainer>);
         }else{   
             /*When data is not available then this component will be show and it will show loading text.*/         
             return(<LoadingComponent noResultFound={this.noResultFound}/>);

@@ -1,8 +1,9 @@
 import React from 'react';
+import {PizzaStyle} from './../Styles/PizzaStyles';
 
 /**It returns individual pizza as list item. */
 const Pizza = (props) => {
-     return (<li>{props.pizza}</li>);
+     return (<PizzaStyle>{props.pizza}</PizzaStyle>);
 }
 
 /** It defines type of props that has been passed to this component. */

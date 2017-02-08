@@ -1,5 +1,6 @@
 import React from 'react';
 import Pizza from './Pizza';
+import {PizzaList} from './../Styles/PizzaComponentStyles';
 
 const PizzaComponent = (props) => {
 
@@ -10,9 +11,9 @@ const PizzaComponent = (props) => {
      */
     const renderPizzas = (pizzas) => {
         return pizzas.map((pizza, index) => {
-            return(<ul key={index}>
+            return(<PizzaList key={index}>
                 <Pizza pizza={pizza}/>
-            </ul>);
+            </PizzaList>);
         });        
     }
 
